@@ -5,7 +5,7 @@ from pyrogram.types import InlineKeyboardMarkup
 
 import config
 from Romeo import Carbon, YouTube, app
-from Romeo.core.call import Bikashh
+from Romeo.core.call import rj
 from Romeo.misc import db
 from Romeo.utils.database import (add_active_chat,
                                        add_active_video_chat,
@@ -15,7 +15,7 @@ from Romeo.utils.exceptions import AssistantErr
 from Romeo.utils.inline.play import (stream_markup, queue_markup,
                                           telegram_markup)
 from Romeo.utils.inline.playlist import close_markup
-from Romeo.utils.pastebin import Bikashhbin
+from Romeo.utils.pastebin import Romeobin
 from Romeo.utils.stream.queue import put_queue, put_queue_index
 from Romeo.utils.thumbnails import gen_thumb, gen_qthumb
 
@@ -119,7 +119,7 @@ async def stream(
         if count == 0:
             return
         else:
-            link = await Bikashhbin(msg)
+            link = await Romeobin(msg)
             lines = msg.count("\n")
             if lines >= 17:
                 car = os.linesep.join(msg.split(os.linesep)[:17])
