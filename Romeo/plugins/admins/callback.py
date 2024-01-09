@@ -11,7 +11,7 @@ from config import (AUTO_DOWNLOADS_CLEAR, BANNED_USERS,
                     TELEGRAM_AUDIO_URL, TELEGRAM_VIDEO_URL,
                     MUSIC_BOT_NAME, adminlist)
 from Romeo import YouTube, app
-from Romeo.core.call import Bikashh
+from Romeo.core.call import rj
 from Romeo.misc import SUDOERS, db
 from Romeo.utils import bot_sys_stats
 from Romeo.utils.database import (
@@ -120,7 +120,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             )
         await CallbackQuery.answer()
         await music_off(chat_id)
-        await Bikashh.pause_stream(chat_id)
+        await rj.pause_stream(chat_id)
         await CallbackQuery.message.reply_text(
             _["admin_2"].format(mention),
             reply_markup=close_keyboard
@@ -132,14 +132,14 @@ async def del_back_playlist(client, CallbackQuery, _):
             )
         await CallbackQuery.answer()
         await music_on(chat_id)
-        await Bikashh.resume_stream(chat_id)
+        await rj.resume_stream(chat_id)
         await CallbackQuery.message.reply_text(
             _["admin_4"].format(mention),
             reply_markup=close_keyboard
         )
     elif command == "Stop" or command == "End":
         await CallbackQuery.answer()
-        await Bikashh.stop_stream(chat_id)
+        await rj.stop_stream(chat_id)
         await set_loop(chat_id, 0)
         await CallbackQuery.message.delete()
         await CallbackQuery.message.reply_text(
@@ -276,7 +276,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             await mystic.delete()
         elif "index_" in queued:
             try:
-                await Bikashh.skip_stream(
+                await rj.skip_stream(
                     chat_id, videoid, video=status
                 )
             except Exception:
