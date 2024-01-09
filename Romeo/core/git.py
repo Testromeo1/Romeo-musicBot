@@ -7,7 +7,7 @@ from git.exc import GitCommandError, InvalidGitRepositoryError
 
 import config
 
-from Romeo.logging import LOGGER
+from ..logging import LOGGER
 
 
 def install_req(cmd: str) -> Tuple[str, str, int, int]:
@@ -71,5 +71,5 @@ def git():
             nrs.pull(config.UPSTREAM_BRANCH)
         except GitCommandError:
             repo.git.reset("--hard", "FETCH_HEAD")
-        install_req("pip3 install -r requirements.txt")
-        LOGGER(__name__).info(f"Fetching updates from Repo ...")
+        install_req("pip3 install --no-cache-dir -r requirements.txt")
+        LOGGER(__name__).info(f"Fetching updates from RomeoMusic...")
