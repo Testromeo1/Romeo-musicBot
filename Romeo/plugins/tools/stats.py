@@ -9,20 +9,20 @@ from pyrogram.errors import MessageIdInvalid
 from pyrogram.types import CallbackQuery, InputMediaPhoto, Message
 from pytgcalls.__version__ import __version__ as pytgver
 
-from Bikash import config
-from Bikash.config import BANNED_USERS, MUSIC_BOT_NAME
-from Bikash.Bgt import get_command
-from Bikash import YouTube, app
-from Bikash.core.userbot import assistants
-from Bikash.misc import SUDOERS, mongodb
-from plugins import ALL_MODULES
-from Bikash.utils.database import (get_global_tops,
+import config
+from config import BANNED_USERS, MUSIC_BOT_NAME
+from helper import get_command
+from Romeo import YouTube, app
+from Romeo.core.userbot import assistants
+from Romeo.misc import SUDOERS, mongodb
+from Romeo.plugins import ALL_MODULES
+from Romeo.utils.database import (get_global_tops,
                                        get_particulars, get_queries,
                                        get_served_chats,
                                        get_served_users, get_sudoers,
                                        get_top_chats, get_topp_users)
-from Bikash.utils.decorators.language import language, languageCB
-from Bikash.utils.inline.stats import (back_stats_buttons,
+from Romeo.utils.decorators.language import language, languageCB
+from Romeo.utils.inline.stats import (back_stats_buttons,
                                            back_stats_markup,
                                            get_stats_markup,
                                            overallback_stats_markup,
