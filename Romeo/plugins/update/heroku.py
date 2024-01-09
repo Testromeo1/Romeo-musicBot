@@ -22,7 +22,7 @@ from Romeo.utils.database import (get_active_chats,
                                        remove_active_chat,
                                        remove_active_video_chat)
 from Romeo.utils.decorators.language import language
-from Romeo.utils.pastebin import Bikashhbin
+from Romeo.utils.pastebin import Romeobin
 
 # Commands
 GETLOG_COMMAND = get_command("GETLOG_COMMAND")
@@ -257,7 +257,7 @@ async def update_(client, message, _):
     _update_response_ = "𝐍𝐞𝐰 𝐔𝐨𝐝𝐚𝐭𝐞 𝐀𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 ✔️\n\n𝐏𝐮𝐬𝐡𝐢𝐧𝐠 𝐍𝐞𝐰 𝐔𝐨𝐝𝐚𝐭𝐞𝐬 ❗\n\n**𝐔𝐩𝐝𝐚𝐭𝐞𝐬:**\n\n[𝐂𝐡𝐞𝐜𝐤 𝐔𝐩𝐝𝐚𝐭𝐞𝐬]({url})"
     _final_updates_ = _update_response_ + updates
     if len(_final_updates_) > 4096:
-        url = await Bikashhbin(updates)
+        url = await Romeobin(updates)
         nrs = await response.edit(
             f"𝐍𝐞𝐰 𝐔𝐨𝐝𝐚𝐭𝐞 𝐀𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 ✔️\n\n𝐏𝐮𝐬𝐡𝐢𝐧𝐠 𝐍𝐞𝐰 𝐔𝐨𝐝𝐚𝐭𝐞𝐬 ❗\n\n**𝐔𝐩𝐝𝐚𝐭𝐞𝐬:**\n\n[𝐂𝐡𝐞𝐜𝐤 𝐔𝐩𝐝𝐚𝐭𝐞𝐬]({url})"
         )
