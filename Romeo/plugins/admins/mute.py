@@ -3,7 +3,7 @@ from pyrogram.types import Message
 
 from config import BANNED_USERS
 from Romeo import app
-from Romeo.core.call import Bikashh
+from Romeo.core.call import rj
 from Romeo.utils.database import is_muted, mute_on
 from Romeo.utils.decorators import AdminRightsCheck
 
