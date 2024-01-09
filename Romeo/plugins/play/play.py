@@ -346,7 +346,7 @@ async def play_commnd(
             return await mystic.delete()
         else:
             try:
-                await Bikashh.stream_call(url)
+                await rj.stream_call(url)
             except NoActiveGroupCall:
                 await mystic.edit_text(
                     "There's An Error In The Bot Then Report [ROMEO SUPPORT](https://t.me/RomeoBot_op) AN Error"
