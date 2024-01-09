@@ -39,7 +39,7 @@ async def stream(
         if not await is_video_allowed(chat_id):
             raise AssistantErr(_["play_7"])
     if forceplay:
-        await Bikashh.force_stop_stream(chat_id)
+        await rj.force_stop_stream(chat_id)
     if streamtype == "playlist":
         msg = f"{_['playlist_16']}\n\n"
         count = 0
@@ -88,7 +88,7 @@ async def stream(
                     )
                 except:
                     raise AssistantErr(_["play_16"])
-                await Bikashh.join_call(
+                await rj.join_call(
                     chat_id, original_chat_id, file_path, video=status, image=thumbnail
                 )
                 await put_queue(
@@ -347,7 +347,7 @@ async def stream(
             n, file_path = await YouTube.video(link)
             if n == 0:
                 raise AssistantErr(_["str_3"])
-            await Bikashh.join_call(
+            await rj.join_call(
                 chat_id, original_chat_id, file_path, video=status, image=thumbnail if thumbnail else None
             )
             await put_queue(
