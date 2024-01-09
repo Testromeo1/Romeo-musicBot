@@ -108,15 +108,15 @@ HELP_7 = """✨ **ping cmd :**
 
 HELP_8 = """✅<u>**Play Commands:**</u>
 
-Available Commands = play, bgt, vplay , cplay
+Available Commands = play, vplay , cplay
 
-ForcePlay Commands = playforce , bgtforce vplayforce , cplayforce
+ForcePlay Commands = playforce , vplayforce , cplayforce
 
 **c** stands for channel play.
 **v** stands for video play.
 **force** stands for force play.
 
-/play or /bgt or /vplay or /cplay  - Bot will start playing your given query on voice chat or Stream live links on voice chats.
+/play or /vplay or /cplay  - Bot will start playing your given query on voice chat or Stream live links on voice chats.
 
 /playforce or /force or /vplayforce or /cplayforce -  **Force Play** stops the current playing track on voice chat and starts playing the searched track instantly without disturbing/clearing queue.
 
