@@ -6,7 +6,7 @@ from pyrogram.types import Message
 from config import BANNED_USERS, MUSIC_BOT_NAME, PING_IMG_URL
 from helper import get_command
 from Romeo import app
-from Romeo.core.call import Bikashh
+from Romeo.core.call import rj
 from Romeo.utils import bot_sys_stats
 from Romeo.utils.decorators.language import language
 from Romeo.utils.inline.play import close_keyboard
@@ -25,7 +25,7 @@ async def ping_com(client, message: Message, _):
         caption=_["ping_1"],
     )
     start = datetime.now()
-    pytgping = await Bikashh.ping()
+    pytgping = await rj.ping()
     UP, CPU, RAM, DISK = await bot_sys_stats()
     resp = (datetime.now() - start).microseconds / 1000
     await response.edit_text(
