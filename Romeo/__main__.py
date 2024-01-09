@@ -6,7 +6,7 @@ from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
 from Romeo import LOGGER, app, userbot
-from Romeo.core.call import Bikashh
+from Romeo.core.call import rj
 from Romeo.misc import sudo
 from Romeo.plugins import ALL_MODULES
 from Romeo.utils.database import get_banned_users, get_gbanned
@@ -38,8 +38,8 @@ async def init():
         importlib.import_module("plugins" + all_module)
     LOGGER("plugins").info("Successfully Imported Modules...")
     await userbot.start()
-    await Bikashh.start()
-    await Bikashh.decorators()
+    await rj.start()
+    await rj.decorators()
     LOGGER("Romeo").info(
         "bot started"
     )
