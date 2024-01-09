@@ -4,7 +4,7 @@ from pyrogram.types import Message
 from config import BANNED_USERS
 from helper import get_command
 from Romeo import YouTube, app
-from Romeo.core.call import Bikashh
+from Romeo.core.call import rj
 from Romeo.misc import db
 from Romeo.utils.romeomusic.rj import command
 from Romeo.utils import AdminRightsCheck, seconds_to_min
@@ -61,7 +61,7 @@ async def seek_comm(cli, message: Message, _, chat_id):
         if n == 0:
             return await message.reply_text(_["admin_30"])
     try:
-        await Bikashh.seek_stream(
+        await rj.seek_stream(
             chat_id,
             file_path,
             seconds_to_min(to_seek),
